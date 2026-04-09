@@ -26,8 +26,14 @@
 
     <main>
         <div class="pdf-container">
-            <!-- Displaying the PDF -->
-            <embed src="report_housing.pdf" type="application/pdf">
+            <!-- Displaying the PDF with improved compatibility -->
+            <object data="./report_housing.pdf" type="application/pdf" width="100%" height="100%">
+                <iframe src="./report_housing.pdf" width="100%" height="100%" style="border: none;">
+                    <p>Trình duyệt của bạn không hỗ trợ xem PDF trực tiếp. 
+                       <a href="./report_housing.pdf" download>Hãy tải xuống báo cáo tại đây</a>.
+                    </p>
+                </iframe>
+            </object>
         </div>
     </main>
 
