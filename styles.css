@@ -67,7 +67,7 @@ main {
     padding: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .pdf-container {
@@ -85,6 +85,55 @@ iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.report {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.report-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.report-card h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-bottom: 0.75rem;
+}
+
+.report-figure {
+    margin: 0;
+}
+
+.report-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.report-figure figcaption {
+    margin-top: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.insights-list {
+    margin-left: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    display: grid;
+    gap: 0.5rem;
 }
 
 /* Responsive */
