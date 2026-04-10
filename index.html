@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Data Analysis - Power BI Report</title>
+    <title>Phân tích dữ liệu nhà ở - Power BI</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -13,27 +13,59 @@
 
     <header>
         <div class="title-group">
-            <h1>Housing Data Analysis Project</h1>
-            <p>Power BI Dashboards & Insights</p>
+            <h1>Dự án phân tích dữ liệu nhà ở</h1>
+            <p>Dashboard Power BI & insight chính</p>
         </div>
         <div class="actions">
-            <!-- Download link pointing to the same PDF -->
-            <a href="report_housing.pdf" download="Housing_Data_Analysis_Report.pdf">
-                Download PDF
-            </a>
+            <a href="#insights">Xem nhanh insight</a>
         </div>
     </header>
 
     <main>
-        <div class="pdf-container">
-            <!-- Displaying the PDF with improved compatibility -->
-            <object data="./report_housing.pdf" type="application/pdf" width="100%" height="100%">
-                <iframe src="./report_housing.pdf" width="100%" height="100%" style="border: none;">
-                    <p>Trình duyệt của bạn không hỗ trợ xem PDF trực tiếp. 
-                       <a href="./report_housing.pdf" download>Hãy tải xuống báo cáo tại đây</a>.
-                    </p>
-                </iframe>
-            </object>
+        <div class="report">
+            <section class="report-card" aria-labelledby="overview-title">
+                <h2 id="overview-title">Tổng quan dự án</h2>
+                <ul class="insights-list">
+                    <li><strong>Mục tiêu</strong>: tổng hợp và phân tích thị trường nhà ở, theo vùng và theo loại nhà, nhằm nhận diện xu hướng giá và các yếu tố ảnh hưởng.</li>
+                    <li><strong>Nguồn dữ liệu</strong>: Google BigQuery (housing dataset) – truy vấn/chuẩn hoá dữ liệu trước khi trực quan hoá.</li>
+                    <li><strong>Công cụ (toolstack)</strong>: Google BigQuery (SQL), Power BI (Power Query / DAX), thiết kế dashboard & storytelling.</li>
+                </ul>
+            </section>
+
+            <section class="report-card" aria-labelledby="market-overview-title">
+                <h2 id="market-overview-title">Tổng quan thị trường</h2>
+                <figure class="report-figure">
+                    <img src="./market_overview.png" alt="Dashboard tổng quan thị trường nhà ở" loading="lazy" />
+                    <figcaption>Tổng quan: thị trường nhà ở</figcaption>
+                </figure>
+            </section>
+
+            <section class="report-card" aria-labelledby="sales-performance-title">
+                <h2 id="sales-performance-title">Hiệu quả bán hàng</h2>
+                <figure class="report-figure">
+                    <img src="./sales_performance.png" alt="Dashboard hiệu quả bán hàng và yếu tố ảnh hưởng" loading="lazy" />
+                    <figcaption>Hiệu quả: doanh số theo vùng & yếu tố ảnh hưởng</figcaption>
+                </figure>
+            </section>
+
+            <section class="report-card" aria-labelledby="house-type-analysis-title">
+                <h2 id="house-type-analysis-title">Phân tích theo loại nhà</h2>
+                <figure class="report-figure">
+                    <img src="./analyis_by_house_type.png" alt="Dashboard so sánh theo loại nhà" loading="lazy" />
+                    <figcaption>So sánh: giá, diện tích (sqm) và yếu tố vĩ mô theo loại nhà</figcaption>
+                </figure>
+            </section>
+
+            <section class="report-card" id="insights" aria-labelledby="insights-title">
+                <h2 id="insights-title">Insight rút ra (từ dashboard)</h2>
+                <ul class="insights-list">
+                    <li><strong>Tập trung theo vùng</strong>: Zealand và Jutland dẫn đầu về tổng giá trị bán (xấp xỉ 95bn và 81bn), trong khi Bornholm là phần nhỏ (~1bn).</li>
+                    <li><strong>Giá chào vs giá mua</strong>: giá mua bám sát giá chào với tương quan gần tuyến tính, hàm ý thị trường định giá khá “hiệu quả” (ít ngoại lệ cực đoan).</li>
+                    <li><strong>Biến động giá theo vùng</strong>: Jutland có mức tăng median sales price lớn nhất (~+0.053), còn Bornholm giảm (~-0.050) → động lượng không đồng đều.</li>
+                    <li><strong>Tuổi nhà là yếu tố quan trọng</strong>: phần “Key influencers” cho thấy giá mua có xu hướng tăng cao hơn khi tuổi nhà nằm trong nhóm 2–16 năm (so với nhóm nhà cũ hơn).</li>
+                    <li><strong>Theo loại nhà</strong>: Farm có giá mua/chào trung bình cao nhất (~2.74M / ~2.71M) và diện tích trung bình lớn nhất (~196 sqm). Apartment có giá theo \(sqm\) cao nhất (~28.7K) – phù hợp với đặc trưng căn nhỏ nhưng giá/m² cao.</li>
+                </ul>
+            </section>
         </div>
     </main>
 
